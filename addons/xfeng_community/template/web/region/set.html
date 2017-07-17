@@ -1,0 +1,68 @@
+{template 'web/common/header'}
+<ul class="nav nav-tabs">
+    <li>
+        <a href="{php echo $this->createWebUrl('region', array('op' => 'list'));}">小区管理</a>
+    </li>
+    <li class="active"><a href="{php echo $this->createWebUrl('region', array('op' => 'set','regionid' => $regionid));}">小区设置</a></li>
+</ul>
+<style>
+    .title{
+        color:red
+    }
+</style>
+<form action="" method="post" class="form-horizontal form">
+    <div class="panel panel-default">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td class="col-md-2">小区设置</td>
+                    <td class="col-md-7">说明</td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2">
+                    </td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="title">房屋托管</td>
+                    <td>
+                        开启房屋托管后，移动端粉丝发布的手机号码不在显示，会显示托管电话
+                    </td>
+                    <td>
+                        <input type="tel" name="set[tel]" value="{$set['tel']}" class="form-control" placeholder="输入托管电话"/>
+                    </td>
+                    <td style="text-align: right;">
+                        <input type="checkbox" name="set[home]" {if $set['home']}checked{/if}/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label"></label>
+        <div class="col-sm-5">
+            <button type="submit" class="btn btn-success" name="submit" value="提交">提交</button>
+            <input type="hidden" name="token" value="{$_W['token']}" />
+        </div>
+    </div>
+</form>
+<script>
+    require(['bootstrap.switch', 'util'], function($, u){
+        $(function(){
+            $(':checkbox').bootstrapSwitch();
+            $(':checkbox').on('switchChange.bootstrapSwitch', function(e, state){
+                $this = $(this);
+                var status = this.checked ? 1 : 0;
+                $this.val(status);
+            });
+            $('.btn').hover(function(){
+                $(this).tooltip('show');
+            },function(){
+                $(this).tooltip('hide');
+            });
+        });
+    });
+</script>
+{template 'web/common/footer'}

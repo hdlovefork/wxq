@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.6">
+	<application setting="true">
+		<name><![CDATA[微擎卡券]]></name>
+		<identifie><![CDATA[we7_coupon]]></identifie>
+		<version><![CDATA[3.3]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[微擎卡券]]></ability>
+		<description><![CDATA[微擎卡券]]></description>
+		<author><![CDATA[若晨社区]]></author>
+		<url><![CDATA[http://bbs.rocrm.cn]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+		<cover>
+			<entry title="收银台入口设置" do="clerk" state="" direct="false" />
+			<entry title="会员卡入口设置" do="card" state="" direct="false" />
+		</cover>
+		<menu>
+			<entry title="会员现金消费统计" do="statcash" state="" direct="false" />
+			<entry title="会员积分统计" do="statcredit1" state="" direct="false" />
+			<entry title="会员余额统计" do="statcredit2" state="" direct="false" />
+			<entry title="通知管理" do="noticemanage" state="" direct="false" />
+			<entry title="签到管理" do="signmanage" state="" direct="false" />
+			<entry title="工作台菜单设置" do="clerkdeskmenu" state="" direct="false" />
+			<entry title="店员管理" do="clerklist" state="" direct="false" />
+			<entry title="门店收银台" do="paycenter" state="" direct="false" />
+			<entry title="门店管理" do="storelist" state="" direct="false" />
+			<entry title="兑换真实物品" do="goodsexchange" state="" direct="false" />
+			<entry title="兑换优惠券" do="couponexchange" state="" direct="false" />
+			<entry title="优惠券派发" do="couponmarket" state="" direct="false" />
+			<entry title="优惠券核销" do="couponconsume" state="" direct="false" />
+			<entry title="优惠券管理" do="couponmanage" state="" direct="false" />
+			<entry title="会员属性" do="memberproperty" state="" direct="false" />
+			<entry title="会员卡管理" do="cardmanage" state="" direct="false" />
+			<entry title="会员卡设置" do="membercard" state="" direct="false" />
+			<entry title="会员卡统计" do="statcard" state="" direct="false" />
+			<entry title="收银台收款统计" do="statpaycenter" state="" direct="false" />
+		</menu>
+		<profile call="gethometiles">
+		</profile>
+	</bindings>
+	<permissions>
+	</permissions>
+	<install><![CDATA[install.php]]></install>
+	<uninstall><![CDATA[
+DROP TABLE IF EXISTS `mc_card`;
+DROP TABLE IF EXISTS `mc_card_care`;
+DROP TABLE IF EXISTS `mc_card_credit_set`;
+DROP TABLE IF EXISTS `mc_card_members`;
+DROP TABLE IF EXISTS `mc_card_notices`;
+DROP TABLE IF EXISTS `mc_card_notices_unread`;
+DROP TABLE IF EXISTS `mc_card_recommend`;
+DROP TABLE IF EXISTS `mc_card_record`;
+DROP TABLE IF EXISTS `mc_card_sign_record`;
+]]></uninstall>
+	<upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.6,0.7">
+  <application setting="true">
+    <name><![CDATA[微小区]]></name>
+    <identifie><![CDATA[xfeng_community]]></identifie>
+    <version><![CDATA[2.0]]></version>
+    <type><![CDATA[business]]></type>
+    <ability><![CDATA[微小区]]></ability>
+    <description><![CDATA[微小区]]></description>
+    <author><![CDATA[晓锋]]></author>
+    <url><![CDATA[njxiaoqu.com]]></url>
+  </application>
+  <platform>
+    <subscribes>
+    </subscribes>
+    <handles>
+      <message type="text" />
+    </handles>
+    <rule embed="false" />
+  </platform>
+  <bindings>
+    <cover>
+        <entry title="主页入口" do="home" state="" direct="false" />
+    </cover>
+    <menu>
+        <entry title="管理中心" do="manage" state="" direct="false" />
+    </menu>
+  </bindings>
+  <install><![CDATA[install.php]]></install>
+  <uninstall><![CDATA[uninstall.php]]></uninstall>
+  <upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>
